@@ -13,7 +13,11 @@ class Rekening1Test {
         r = new Rekening(12345678);
     }
     @Test
-    void stortenPositief
+    void stortenPositiefBedragWijzigtSaldo() {
+        System.out.println("stortenPositiefBedragWijzigtSaldo");
+        r.stort(100);
+        assertEquals(100, r.getSaldo());
+    }
 
 
     @Test
