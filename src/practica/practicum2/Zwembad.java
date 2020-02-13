@@ -57,7 +57,7 @@ public class Zwembad {
         this.berekende_inhoud = berekende_inhoud;
     }
     public String toString() {
-        String s = "GEGEVENS ZWEMBAD: Dit zwembad is "+ breedte + "meter breed, " + lengte + "meter lang, en " + diepte + "meter diep";
+        String s = "GEGEVENS ZWEMBAD: Dit zwembad is "+ breedte + " meter breed, " + lengte + " meter lang, en " + diepte + " meter diep";
         return s;
     }
 

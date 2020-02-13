@@ -1,6 +1,7 @@
 package practica.practicum2B;
 
 public class Voetbalclub {
+    private int rangnummer;
     private String naam;
     public int aantalGespeeld;
     private int aantalGewonnen;
@@ -9,7 +10,8 @@ public class Voetbalclub {
     public int aantalPunten;
 
 
-    public Voetbalclub (String nm, int antlges, int antlgew, int antlgel, int antlver, int antlpt) {
+    public Voetbalclub (int rang, String nm, int antlges, int antlgew, int antlgel, int antlver, int antlpt) {
+        rangnummer = rang;
         naam = nm;
         aantalGespeeld = antlges;
         aantalGewonnen = antlgew;
@@ -17,10 +19,13 @@ public class Voetbalclub {
         aantalVerloren = antlver;
         aantalPunten = antlpt;
     }
+    public Voetbalclub(String naam) {
+        this.naam = naam;
+    };
 
     public int aantalGespeeld() { return aantalGespeeld; }
     public int aantalPunten() {return aantalPunten;}
-    
+
 
     public void verwerkResultaat(char ch) {
         if (ch == 'w') {
@@ -41,9 +46,10 @@ public class Voetbalclub {
         else {
             System.out.println("Foutmelding: Geef w voor winst, v voor verlies of g voor gelijkspel");
         }
+
     }
     public String toString() {
-        String s = naam + ' ' + aantalGespeeld + ' ' + aantalGewonnen + ' ' + aantalGelijk + ' ' + aantalVerloren + ' ' + aantalPunten;
+        String s = rangnummer + ' ' + naam + ' ' + aantalGespeeld + ' ' + aantalGewonnen + ' ' + aantalGelijk + ' ' + aantalVerloren + ' ' + aantalPunten;
         return s;
     }
 }
