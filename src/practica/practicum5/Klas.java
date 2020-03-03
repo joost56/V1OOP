@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Klas {
     private String klasCode;
-    private Leerling deLeerlingen;
     private ArrayList<Leerling> leerlingen;
 
     public Klas(String kC){
@@ -16,7 +15,11 @@ public class Klas {
         leerlingen.add(L);
     }
     public void wijzigCijfer(String nm, double nweCijfer){
-
+        for(Leerling leerling : leerlingen){
+            if (leerling.getNaam().equals(nm)){
+                leerling.setCijfer(nweCijfer);
+            }
+        }
     }
     public ArrayList<Leerling> getLeerlingen() {
         return leerlingen;
@@ -27,10 +30,10 @@ public class Klas {
     }
 
     public String toString(){
-
-        String s = "In klas " + klasCode + " zitten de volgende leerlingen: \n" + leerlingen.get(0) + "\n"+ leerlingen.get(1) + "\n" + leerlingen.get(2);
-
-
-            return s;
+        String k = "In klas " + klasCode + " zitten de volgende leerlingen: \n";
+            for (Leerling leerling : leerlingen){
+                k = k + leerling + "\n";
+            }
+            return k;
     }
 }
