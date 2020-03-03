@@ -1,7 +1,6 @@
 package practica.practicum2B;
 
 public class Voetbalclub {
-    private int rangnummer;
     private String naam;
     public int aantalGespeeld;
     private int aantalGewonnen;
@@ -10,8 +9,7 @@ public class Voetbalclub {
     public int aantalPunten;
 
 
-    public Voetbalclub (int rang, String nm, int antlges, int antlgew, int antlgel, int antlver, int antlpt) {
-        rangnummer = rang;
+    public Voetbalclub (String nm, int antlges, int antlgew, int antlgel, int antlver, int antlpt) {
         naam = nm;
         aantalGespeeld = antlges;
         aantalGewonnen = antlgew;
@@ -49,7 +47,7 @@ public class Voetbalclub {
 
     }
     public String toString() {
-        String s = rangnummer + ' ' + naam + ' ' + aantalGespeeld + ' ' + aantalGewonnen + ' ' + aantalGelijk + ' ' + aantalVerloren + ' ' + aantalPunten;
+        String s =  naam + ' ' + aantalGespeeld + ' ' + aantalGewonnen + ' ' + aantalGelijk + ' ' + aantalVerloren + ' ' + aantalPunten;
         return s;
     }
 }

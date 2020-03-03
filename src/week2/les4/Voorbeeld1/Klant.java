@@ -15,10 +15,6 @@ public class Klant {
         return naam;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
-
     public String getAdres() {
         return adres;
     }
@@ -36,7 +32,6 @@ public class Klant {
     }
 
     public String toString(){
-        String s = naam + " woont op " + adres + " in " + plaats;
-                return s;
+        return naam + " woont op " + adres + " in " + plaats;
     }
 }

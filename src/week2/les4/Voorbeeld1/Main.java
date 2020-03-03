@@ -5,10 +5,11 @@ public class Main {
         //aanmaken van twee Rekening-objecten
         Rekening rekening1 = new Rekening(12345678);
         Rekening rekening2 = new Rekening(98765432);
-        rekening1.stort(150);
-        rekening2.stort(300);
+        rekening1.stort(1000);
+        rekening2.stort(1503.05);
         System.out.println(rekening1);
         System.out.println(rekening2);
+        System.out.println();
 
         //aanmaken van 2 Klant-objecten
         Klant klant1 = new Klant("Jan", "Nijenoord1", "Utrecht");
@@ -22,6 +23,7 @@ public class Main {
         //klant2 koppelen aan rekening2
         rekening2.setRekeninghouder(klant2);
         System.out.println(rekening2);
+        System.out.println(klant2);
         //klant1 koppelen aan rekening2
         rekening2.setRekeninghouder(klant1);
         System.out.println(rekening1);

@@ -2,7 +2,7 @@ package week2.les4.Voorbeeld2;
 
 public class Main {
     public static void main(String[] args) {
-        Klant k1 = new Klant("Jan", "Nijenoord 1", "Utreht");
+        Klant k1 = new Klant("Jan", "Nijenoord 1", "Utrecht");
         Klant k2 = new Klant("Wim", "Oudenoord 340", "Utrecht");
         System.out.println(k1);
         System.out.println(k2);
@@ -14,8 +14,8 @@ public class Main {
         k1.setMijnRekening(r1);
         k2.setMijnRekening(r2);
 
-        k1.getMijnRekening().stort(1000);
-        k2.getMijnRekening().stort(1503.05);
+        r1.stort(1000);
+        r2.stort(1503);
 
         System.out.println(k1);
         System.out.println(k1.getMijnRekening());
