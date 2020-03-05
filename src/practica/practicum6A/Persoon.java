@@ -33,7 +33,7 @@ public class Persoon {
             budget = budget + g.huidigeWaarde();
             return true;
         }else{
-            return false;
+            return false; 
         }
     }
     public Game zoekGameOpNaam(String naam) {
