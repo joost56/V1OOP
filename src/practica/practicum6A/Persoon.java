@@ -34,7 +34,7 @@ public class Persoon {
             koper.koop(g);
             return true;
         }else{
-            return false;
+            return false; 
         }
     }
 
