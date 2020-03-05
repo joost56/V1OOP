@@ -13,21 +13,17 @@ public class Game {
         nieuwprijs = nwpr;
     }
 
-    public double getNieuwprijs() {
-        return nieuwprijs;
-    }
-
     public String getNaam() {
         return naam;
     }
 
     public double huidigeWaarde() {
         int Jaar = LocalDate.now().getYear();
-        while (Jaar != releaseJaar) {
-            releaseJaar++;
-            nieuwprijs = nieuwprijs * 0.70;
+        while (releaseJaar != Jaar) {
+            double huidig = nieuwprijs * 0.70;
+            return huidig;
         }
-        return nieuwprijs;
+        return huidigeWaarde();
     }
 
     public boolean equals(Object andereObject) {
@@ -42,7 +38,7 @@ public class Game {
         return gelijkeObjecten;
     }
         public String toString() {
-            String s = naam + " , uitgegeven in " + releaseJaar + "; nieuwprijs: €" + nieuwprijs + "nu voor: " + huidigeWaarde();
+            String s = naam + ", uitgegeven in " + releaseJaar + "; nieuwprijs: €" + String.format("%.2f", nieuwprijs) + " nu voor: " + String.format("%.2f", huidigeWaarde());
             return s;
         }
 

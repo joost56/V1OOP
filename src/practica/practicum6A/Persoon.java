@@ -10,6 +10,7 @@ public class Persoon {
     public Persoon(String nm, double bud){
         naam = nm;
         budget = bud;
+        mijngames = new ArrayList<Game>();
     }
 
     public double getBudget() {
@@ -17,15 +18,32 @@ public class Persoon {
     }
 
     public boolean koop(Game g) {
-        return false;
+        if(getBudget() >= g.huidigeWaarde() && !mijngames.contains(g)){
+            mijngames.add(g);
+            budget = budget - g.huidigeWaarde();
+            return true;
+        }else{
+            return false;
+        }
     }
 
-    public boolean verkoop(Game g, Persoon koper){
-        return true;
+    public boolean verkoop(Game g, Persoon koper) {
+        if(koper.budget >= g.huidigeWaarde() && !g.equals(g.getNaam())){
+            mijngames.remove(g);
+            budget = budget + g.huidigeWaarde();
+            koper.koop(g);
+            return true;
+        }else{
+            return false;
+        }
     }
+
 
     public String toString(){
-        String s = naam + " heeft een budget van € " + budget + "en bezit de volgende games:" + mijngames;
+        String s = naam + " heeft een budget van €" + String.format("%.2f", budget) + " en bezit de volgende games: \n";
+        for (Game game : mijngames){
+            s = s + game + "\n";
+        }
         return s;
     }
 

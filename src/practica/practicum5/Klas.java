@@ -4,34 +4,34 @@ import java.util.ArrayList;
 
 public class Klas {
     private String klasCode;
-    private ArrayList<Leerling> leerlingen;
+    private ArrayList<Leerling> deLeerlingen;
 
     public Klas(String kC){
         klasCode = kC;
-        leerlingen = new ArrayList<Leerling>();
+        deLeerlingen = new ArrayList<Leerling>();
     }
 
     public void voegLeerlingToe(Leerling L){
-        leerlingen.add(L);
+        deLeerlingen.add(L);
     }
     public void wijzigCijfer(String nm, double nweCijfer){
-        for(Leerling leerling : leerlingen){
+        for(Leerling leerling : deLeerlingen){
             if (leerling.getNaam().equals(nm)){
                 leerling.setCijfer(nweCijfer);
             }
         }
     }
     public ArrayList<Leerling> getLeerlingen() {
-        return leerlingen;
+        return deLeerlingen;
     }
 
     public int aantalLeerlingen() {
-        return leerlingen.size();
+        return deLeerlingen.size();
     }
 
     public String toString(){
         String k = "In klas " + klasCode + " zitten de volgende leerlingen: \n";
-            for (Leerling leerling : leerlingen){
+            for (Leerling leerling : deLeerlingen){
                 k = k + leerling + "\n";
             }
             return k;
