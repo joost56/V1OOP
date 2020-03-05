@@ -1,4 +1,4 @@
-package practica.practicum6A;
+package practica.practicum6B;
 
 import java.time.LocalDate;
 
@@ -18,12 +18,14 @@ public class Game {
     }
 
     public double huidigeWaarde() {
-        int jaar = LocalDate.now().getYear() ;
-        int Verschil_in_Jaren = jaar - releaseJaar;
-        double Daling = (Math.pow(0.70, Verschil_in_Jaren));
-        return Daling * nieuwprijs;
-
+        int Jaar = LocalDate.now().getYear();
+        while (releaseJaar != Jaar) {
+            double huidig = nieuwprijs * 0.70;
+            return huidig;
         }
+        return huidigeWaarde();
+    }
+
     public boolean equals(Object andereObject) {
         boolean gelijkeObjecten = false;
         if (andereObject instanceof Game) {
@@ -35,9 +37,9 @@ public class Game {
         }
         return gelijkeObjecten;
     }
-        public String toString() {
-            String s = naam + ", uitgegeven in " + releaseJaar + "; nieuwprijs: €" + String.format("%.2f", nieuwprijs) + " nu voor: €" + String.format("%.2f", huidigeWaarde());
-            return s;
-        }
-
+    public String toString() {
+        String s = naam + ", uitgegeven in " + releaseJaar + "; nieuwprijs: €" + String.format("%.2f", nieuwprijs) + " nu voor: " + String.format("%.2f", huidigeWaarde());
+        return s;
     }
+
+}
